@@ -12,7 +12,7 @@ export function createOrder(order) {
 
   export function updateOrder(order) {
     return new Promise(async (resolve) => {
-      const response = await fetch('http://localhost:8081/orders/'+order.id, {
+      const response = await fetch('https://e-commerce-backend-flax-one.vercel.app/orders/'+order.id, {
         method: 'PATCH',
         body: JSON.stringify(order),
         headers: { 'content-type': 'application/json' },
