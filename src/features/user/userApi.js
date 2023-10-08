@@ -1,6 +1,6 @@
 export function fetchLoggedInUserOrders(userId) {
     return new Promise(async (resolve) =>{
-      const response = await fetch('http://localhost:8081/orders/user/'+userId) //! ?user.id to user
+      const response = await fetch('https://e-commerce-backend-flax-one.vercel.app/orders/user/'+userId) //! ?user.id to user
       const data = await response.json()
       console.log("userApi",data)
       resolve({data})
