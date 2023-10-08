@@ -1,6 +1,6 @@
 export function addToAddress(item) {
     return new Promise(async (resolve) => {
-      const response = await fetch('http://localhost:8081/address', {
+      const response = await fetch('https://e-commerce-backend-flax-one.vercel.app/address', {
         method: 'POST',
         body: JSON.stringify(item),
         headers: { 'content-type': 'application/json' },
@@ -13,7 +13,7 @@ export function addToAddress(item) {
 
   export function fetchAddressItemByUserId(userId){
     return new Promise(async(resolve)=>{
-        const response= await fetch('http://localhost:8081/address?user='+userId)
+        const response= await fetch('https://e-commerce-backend-flax-one.vercel.app/address?user='+userId)
         const data= await response.json()
         resolve({data})
 
@@ -36,7 +36,7 @@ export function addToAddress(item) {
   
 export function deleteFromAddress(addressId) {
     return new Promise(async (resolve) => {
-      const response = await fetch('http://localhost:8081/address/'+addressId, {
+      const response = await fetch('https://e-commerce-backend-flax-one.vercel.app/address/'+addressId, {
         method: 'DELETE',
         headers: { 'content-type': 'application/json' },
       });
