@@ -80,7 +80,7 @@
   export function createProduct(product) {
     return new Promise(async (resolve) =>{
       //TODO: we will not hard-code server URL here
-      const response = await fetch('http://localhost:8081/products',{
+      const response = await fetch('https://e-commerce-backend-flax-one.vercel.app/products',{
         method:'POST',
         body:JSON.stringify(product),
         headers:{ 'content-type': 'application/json' }
@@ -95,7 +95,7 @@
   export function updateProduct(update) {
     return new Promise(async (resolve) => {
       const response = await fetch(
-        'http://localhost:8081/products/' + update.id,
+        'https://e-commerce-backend-flax-one.vercel.app/products/' + update.id,
         {
           method: 'PATCH',
           body: JSON.stringify(update),
