@@ -15,7 +15,7 @@ function Signup() {
   const user=useSelector(selectLoggedInUser)
     return ( 
         <>
-        {user && <Navigate to={'/'} replace={true}></Navigate>}
+        {user?.result?.id && <Navigate to={'/'} replace={true}></Navigate>}
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
@@ -96,6 +96,8 @@ function Signup() {
               {errors.confirmpassword && <p className="text-xl text-red-500">{errors.confirmpassword.message}</p>}
             </div>
           </div>
+
+          {user?.message ? <p className="text-2xl text-red-500">{user?.message}</p> :null}
 
             <div>
               <button
