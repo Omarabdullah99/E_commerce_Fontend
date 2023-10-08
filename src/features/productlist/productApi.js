@@ -12,7 +12,7 @@
   export function fetchProductById(id) {
     return new Promise(async (resolve) =>{
       //TODO: we will not hard-code server URL here
-      const response = await fetch('http://localhost:8081/products/'+id) 
+      const response = await fetch('https://e-commerce-backend-flax-one.vercel.app/products/'+id) 
       const data = await response.json()
       resolve({data})
     }
@@ -46,7 +46,7 @@
 
   return new Promise(async (resolve) =>{
     //TODO: we will not hard-code server URL here
-    const response = await fetch('http://localhost:8081/products?'+queryString) 
+    const response = await fetch('https://e-commerce-backend-flax-one.vercel.app/products?'+queryString) 
     const data = await response.json()
     const totalItems= await response.headers.get('X-Total-Count')
     resolve({data:{products:data,totalItems:+totalItems}})
@@ -58,7 +58,7 @@
   export function fetchCategories() {
     return new Promise(async (resolve) =>{
       //TODO: we will not hard-code server URL here
-      const response = await fetch('http://localhost:8081/category') 
+      const response = await fetch('https://e-commerce-backend-flax-one.vercel.app/category') 
       const data = await response.json()
       resolve({data})
     }
@@ -68,7 +68,7 @@
   export function fetchBrands() {
     return new Promise(async (resolve) =>{
       //TODO: we will not hard-code server URL here
-      const response = await fetch('http://localhost:8081/brands') 
+      const response = await fetch('https://e-commerce-backend-flax-one.vercel.app/brands') 
       const data = await response.json()
       resolve({data})
     }
